@@ -1,0 +1,820 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\paymantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\paymantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\expensecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\rolescontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\rolescontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\gradescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\gradescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\expensecategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\expensecategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251117114611_AddingCreatingtimetoTheUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251117114611_AddingCreatingtimetoTheUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\controllers\\authcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:controllers\\authcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251117102723_AddFirstNameLastNameToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251117102723_AddFirstNameLastNameToUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\migrations\\20251026141213_seedroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:migrations\\20251026141213_seedroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\services\\expenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:services\\expenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\services\\expensecategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:services\\expensecategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\repositorys\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:repositorys\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026140951_SeedRoles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20251026140951_SeedRoles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\expensebycategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\expensebycategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\profitreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\profitreportdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\profitreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\profitreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\profitreportexpense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\profitreportexpense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:mapping\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\updateexpensedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\updateexpensedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\expensedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\expensedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\createexpensedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\createexpensedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\services\\iservice\\iexpenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:services\\iservice\\iexpenseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\repositorys\\irepository\\iexpenserepositpry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:repositorys\\irepository\\iexpenserepositpry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\repositorys\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:repositorys\\expenserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\services\\iservice\\iexpensecategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:services\\iservice\\iexpensecategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\repositorys\\irepository\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:repositorys\\irepository\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\models\\dtos\\expensecategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:models\\dtos\\expensecategorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\migrations\\20251019111013_updating the expanse category name.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:migrations\\20251019111013_updating the expanse category name.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\migrations\\20251020161822_adding data to the database .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:migrations\\20251020161822_adding data to the database .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\migrations\\20251020064524_adding teacherid to the expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:migrations\\20251020064524_adding teacherid to the expense.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\migrations\\20251026141202_initialidentitytables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:migrations\\20251026141202_initialidentitytables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\migrations\\20251026125748_adding profit repot calsses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:migrations\\20251026125748_adding profit repot calsses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|c:\\users\\abdur\\projects\\futurestepsacademy.api\\migrations\\20251027082442_updating the appication user prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0313F8C7-7431-225C-9664-C0D3BD8CEFB9}|FutureStepsAcademy.API.csproj|solutionrelative:migrations\\20251027082442_updating the appication user prop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TeacherController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\TeacherController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TeacherController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\TeacherController.cs",
+              "RelativeToolTip": "Controllers\\TeacherController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:04:15.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Controllers\\StudentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:04:07.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GradesController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\GradesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GradesController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\GradesController.cs",
+              "RelativeToolTip": "Controllers\\GradesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T12:03:23.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DepartmentController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T11:54:59.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAqwFAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T11:28:58.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymantController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\PaymantController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymantController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\PaymantController.cs",
+              "RelativeToolTip": "Controllers\\PaymantController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAYwGsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T10:21:37.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExpenseController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\ExpenseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ExpenseController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\ExpenseController.cs",
+              "RelativeToolTip": "Controllers\\ExpenseController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAYwH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T12:29:58.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ExpenseCategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\ExpenseCategoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ExpenseCategoryController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\ExpenseCategoryController.cs",
+              "RelativeToolTip": "Controllers\\ExpenseCategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:24:38.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RolesController .cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\RolesController .cs",
+              "RelativeDocumentMoniker": "Controllers\\RolesController .cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\RolesController .cs",
+              "RelativeToolTip": "Controllers\\RolesController .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:20:11.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReportController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:04:01.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AuthController .cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\AuthController .cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController .cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\AuthController .cs",
+              "RelativeToolTip": "Controllers\\AuthController .cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:17:48.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\LoginDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:15:50.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InvoicesController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\InvoicesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InvoicesController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\InvoicesController.cs",
+              "RelativeToolTip": "Controllers\\InvoicesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T12:13:38.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:58:19.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "Controllers\\CourseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T11:27:52.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20251117114611_AddingCreatingtimetoTheUser.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251117114611_AddingCreatingtimetoTheUser.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251117114611_AddingCreatingtimetoTheUser.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251117114611_AddingCreatingtimetoTheUser.cs",
+              "RelativeToolTip": "Migrations\\20251117114611_AddingCreatingtimetoTheUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T11:46:12.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\SeedData.cs",
+              "RelativeDocumentMoniker": "Models\\SeedData.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\SeedData.cs",
+              "RelativeToolTip": "Models\\SeedData.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAB8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:43:37.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAYwLkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T10:49:00.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-26T13:54:08.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RegisterDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\RegisterDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\RegisterDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\RegisterDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\RegisterDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:15:25.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ExpenseCategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\ExpenseCategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\ExpenseCategoryService.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\ExpenseCategoryService.cs",
+              "RelativeToolTip": "Services\\ExpenseCategoryService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAqwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T11:17:04.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ExpenseService.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\ExpenseService.cs",
+              "RelativeDocumentMoniker": "Services\\ExpenseService.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\ExpenseService.cs",
+              "RelativeToolTip": "Services\\ExpenseService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T12:12:06.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositorys\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\UnitOfWork.cs",
+              "RelativeToolTip": "Repositorys\\UnitOfWork.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAqwDkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T11:23:12.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "20251117102723_AddFirstNameLastNameToUser.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251117102723_AddFirstNameLastNameToUser.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251117102723_AddFirstNameLastNameToUser.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251117102723_AddFirstNameLastNameToUser.cs",
+              "RelativeToolTip": "Migrations\\20251117102723_AddFirstNameLastNameToUser.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T10:27:23.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20251026141213_SeedRoles.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026141213_SeedRoles.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251026141213_SeedRoles.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026141213_SeedRoles.cs",
+              "RelativeToolTip": "Migrations\\20251026141213_SeedRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:12:13.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20251026140951_SeedRoles.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026140951_SeedRoles.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251026140951_SeedRoles.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026140951_SeedRoles.cs",
+              "RelativeToolTip": "Migrations\\20251026140951_SeedRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:09:51.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "20251026141202_InitialIdentityTables.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026141202_InitialIdentityTables.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251026141202_InitialIdentityTables.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026141202_InitialIdentityTables.cs",
+              "RelativeToolTip": "Migrations\\20251026141202_InitialIdentityTables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T14:12:02.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "20251027082442_Updating the appication user prop.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251027082442_Updating the appication user prop.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251027082442_Updating the appication user prop.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251027082442_Updating the appication user prop.cs",
+              "RelativeToolTip": "Migrations\\20251027082442_Updating the appication user prop.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T08:24:42.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ExpenseByCategoryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ExpenseByCategoryDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ExpenseByCategoryDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ExpenseByCategoryDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\ExpenseByCategoryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:22:51.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ProfitReport.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\ProfitReport.cs",
+              "RelativeDocumentMoniker": "Models\\ProfitReport.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\ProfitReport.cs",
+              "RelativeToolTip": "Models\\ProfitReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T12:51:51.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ProfitReportExpense.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\ProfitReportExpense.cs",
+              "RelativeDocumentMoniker": "Models\\ProfitReportExpense.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\ProfitReportExpense.cs",
+              "RelativeToolTip": "Models\\ProfitReportExpense.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T12:52:28.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Expense.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\Expense.cs",
+              "RelativeDocumentMoniker": "Models\\Expense.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\Expense.cs",
+              "RelativeToolTip": "Models\\Expense.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T06:25:09.411Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwEQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:54:18.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "20251026125748_Adding profit repot calsses.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026125748_Adding profit repot calsses.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251026125748_Adding profit repot calsses.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251026125748_Adding profit repot calsses.cs",
+              "RelativeToolTip": "Migrations\\20251026125748_Adding profit repot calsses.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T12:57:48.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ProfitReportDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ProfitReportDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ProfitReportDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ProfitReportDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\ProfitReportDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:22:24.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ExpenseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\ExpenseRepository.cs",
+              "RelativeDocumentMoniker": "Repositorys\\ExpenseRepository.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\ExpenseRepository.cs",
+              "RelativeToolTip": "Repositorys\\ExpenseRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T13:25:31.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20251020064524_adding teacherId to the expense.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251020064524_adding teacherId to the expense.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251020064524_adding teacherId to the expense.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251020064524_adding teacherId to the expense.cs",
+              "RelativeToolTip": "Migrations\\20251020064524_adding teacherId to the expense.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T06:45:24.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IExpenseService.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\IService\\IExpenseService.cs",
+              "RelativeDocumentMoniker": "Services\\IService\\IExpenseService.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\IService\\IExpenseService.cs",
+              "RelativeToolTip": "Services\\IService\\IExpenseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T06:58:53.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Mapping\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Mapping\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Mapping\\MappingProfile.cs",
+              "RelativeToolTip": "Mapping\\MappingProfile.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAANkAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:32:40.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "20251020161822_adding data to the database .cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251020161822_adding data to the database .cs",
+              "RelativeDocumentMoniker": "Migrations\\20251020161822_adding data to the database .cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251020161822_adding data to the database .cs",
+              "RelativeToolTip": "Migrations\\20251020161822_adding data to the database .cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T16:18:22.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ExpenseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ExpenseDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ExpenseDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ExpenseDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\ExpenseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T14:32:28.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CreateExpenseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\CreateExpenseDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\CreateExpenseDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\CreateExpenseDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\CreateExpenseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T14:53:14.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "UpdateExpenseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\UpdateExpenseDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\UpdateExpenseDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\UpdateExpenseDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\UpdateExpenseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T15:13:49.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "IExpenseRepositpry.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\IRepository\\IExpenseRepositpry.cs",
+              "RelativeDocumentMoniker": "Repositorys\\IRepository\\IExpenseRepositpry.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\IRepository\\IExpenseRepositpry.cs",
+              "RelativeToolTip": "Repositorys\\IRepository\\IExpenseRepositpry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T13:07:29.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "IExpenseCategoryService.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\IService\\IExpenseCategoryService.cs",
+              "RelativeDocumentMoniker": "Services\\IService\\IExpenseCategoryService.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Services\\IService\\IExpenseCategoryService.cs",
+              "RelativeToolTip": "Services\\IService\\IExpenseCategoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T12:01:40.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\IRepository\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositorys\\IRepository\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Repositorys\\IRepository\\IUnitOfWork.cs",
+              "RelativeToolTip": "Repositorys\\IRepository\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T11:22:38.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "20251019111013_updating the expanse category name.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251019111013_updating the expanse category name.cs",
+              "RelativeDocumentMoniker": "Migrations\\20251019111013_updating the expanse category name.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Migrations\\20251019111013_updating the expanse category name.cs",
+              "RelativeToolTip": "Migrations\\20251019111013_updating the expanse category name.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA6wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T11:10:14.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ExpenseCategoryDTO.cs",
+              "DocumentMoniker": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ExpenseCategoryDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ExpenseCategoryDTO.cs",
+              "ToolTip": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\Models\\DTOs\\ExpenseCategoryDTO.cs",
+              "RelativeToolTip": "Models\\DTOs\\ExpenseCategoryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T10:29:58.259Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
