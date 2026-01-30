@@ -1,0 +1,35 @@
+services:
+  future-steps-academy-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: FutureStepsAcademy
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Reta2006..
+    ports:
+      - "1433:1433"
+    networks:
+      - future-steps-network
+    restart: always
+
+  future-steps-academy-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: future-steps-academy-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=FutureStepsAcademy;Database=FutureStepsAcademy;User Id=sa;Password=Reta2006..;TrustServerCertificate=True;
+      - Jwt__Key=YourSecureSecretKeyForFutureStepsAcademy123!
+      - Jwt__Issuer=FutureStepsAcademy
+      - Jwt__Audience=FutureStepsAcademyUser
+    ports:
+      - "5030:8080"
+    depends_on:
+      - future-steps-academy-db
+    networks:
+      - future-steps-network
+    restart: on-failure
+
+networks:
+  future-steps-network:
+    driver: bridge

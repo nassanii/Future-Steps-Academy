@@ -17,7 +17,10 @@ namespace FutureStepsAcademy.API.Repositorys
 
         public async Task<IEnumerable<Teacher>> GetAllWithInfo()
         {
-            var Teachers = await _db.Teachers.Include(u => u.department).ToListAsync();
+            var Teachers = await _db.Teachers
+                .Include(u => u.department)
+                .Include(u => u.teacher_Courses).ThenInclude(u => u.course)
+                .ToListAsync();
             return Teachers;
         }
 

@@ -73,11 +73,48 @@ namespace FutureStepsAcademy.API.Controllers
         public async Task<IActionResult> Update([FromBody] UpdateCourseRequestDTO updateCourseRequestDTO, int id)
         {
             var Course = await _courseSevice.GetCourseById(id);
-            // mapping the Domian to UpdateCourseDTO
-            _mapper.Map(updateCourseRequestDTO, Course);
+            if (Course == null)
+                return NotFound();
+
+            // Update basic properties
+            Course.courseName = updateCourseRequestDTO.courseName;
+            Course.CourseCode = updateCourseRequestDTO.CourseCode;
+
+            // Clear existing relationships
+            Course.course_Departments.Clear();
+            Course.teacher_Courses.Clear();
+
+            // Add new department relationships
+            if (updateCourseRequestDTO.departmentIDs != null && updateCourseRequestDTO.departmentIDs.Any())
+            {
+                foreach (var deptId in updateCourseRequestDTO.departmentIDs)
+                {
+                    Course.course_Departments.Add(new Course_Department
+                    {
+                        CourseID = Course.CourseID,
+                        DepartmentID = deptId
+                    });
+                }
+            }
+
+            // Add new teacher relationships
+            if (updateCourseRequestDTO.TeachersIDs != null && updateCourseRequestDTO.TeachersIDs.Any())
+            {
+                foreach (var teacherId in updateCourseRequestDTO.TeachersIDs)
+                {
+                    Course.teacher_Courses.Add(new Teacher_Course
+                    {
+                        CourseID = Course.CourseID,
+                        TeacherID = teacherId
+                    });
+                }
+            }
+
             await _courseSevice.UpdateCourse(Course);
-            // mappin domin to DTO 
-            return Ok(_mapper.Map<CourseDTO>(Course));
+            
+            // Reload to get updated relationships
+            var updatedCourse = await _courseSevice.GetCourseById(id);
+            return Ok(_mapper.Map<CourseDTO>(updatedCourse));
         }
 
         [HttpDelete]

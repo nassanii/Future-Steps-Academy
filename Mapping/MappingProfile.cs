@@ -35,7 +35,10 @@ public class MappingProfile : Profile
 
         CreateMap<Teacher, GetAllTeacherDTO>()
     .ForMember(dest => dest.DepartmentName,
-               opt => opt.MapFrom(src => src.department.DepartmentName)).ReverseMap();
+               opt => opt.MapFrom(src => src.department.DepartmentName))
+    .ForMember(dest => dest.Courses,
+               opt => opt.MapFrom(src => src.teacher_Courses.Select(tc => tc.course)))
+    .ReverseMap();
 
 
 
@@ -57,7 +60,10 @@ public class MappingProfile : Profile
 
 
 
-        CreateMap<Department, GetAllDepartmentsDTO>().ReverseMap();
+        CreateMap<Department, GetAllDepartmentsDTO>()
+             .ForMember(dest => dest.Courses, opt => opt.MapFrom(src =>
+                src.Course_Departments.Select(cd => cd.course)))
+            .ReverseMap();
 
         CreateMap<Department, UpdateDepartmentDTO>()
     .ForMember(dest => dest.CourseIDs,

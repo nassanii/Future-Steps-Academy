@@ -7,5 +7,6 @@ namespace FutureStepsAcademy.API.Repositorys.IRepository
     {
         Task Update(Department obj);
         Task<Department> GetByIdWithInfo(int id);
+        Task<IEnumerable<Department>> GetAllWithRelations();
     }
 }

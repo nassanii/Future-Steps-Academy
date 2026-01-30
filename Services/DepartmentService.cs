@@ -32,7 +32,7 @@ namespace FutureStepsAcademy.API.Services
 
         public async Task<IEnumerable<Department>> GetAllDepartment()
         {
-            var departments = await _unitOfWork.Department.GetAll();
+            var departments = await _unitOfWork.Department.GetAllWithRelations();
             return departments;
         }
 

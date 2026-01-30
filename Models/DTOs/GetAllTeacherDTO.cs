@@ -13,5 +13,8 @@
 
         // FK
         public string DepartmentName { get; set; }
+
+        // Courses list
+        public List<SimpleCourseDTO> Courses { get; set; } = new List<SimpleCourseDTO>();
     }
 }

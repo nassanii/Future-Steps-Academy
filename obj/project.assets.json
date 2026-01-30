@@ -5216,31 +5216,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abdur\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/abdurrahmannassani/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\FutureStepsAcademy.API.csproj",
+      "projectUniqueName": "/Users/abdurrahmannassani/Documents/Projects/Future-Steps-Academy/FutureStepsAcademy.API.csproj",
       "projectName": "FutureStepsAcademy.API",
-      "projectPath": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\FutureStepsAcademy.API.csproj",
-      "packagesPath": "C:\\Users\\abdur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abdur\\projects\\FutureStepsAcademy.API\\obj\\",
+      "projectPath": "/Users/abdurrahmannassani/Documents/Projects/Future-Steps-Academy/FutureStepsAcademy.API.csproj",
+      "packagesPath": "/Users/abdurrahmannassani/.nuget/packages/",
+      "outputPath": "/Users/abdurrahmannassani/Documents/Projects/Future-Steps-Academy/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\abdur\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/abdurrahmannassani/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5259,7 +5252,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -5325,7 +5318,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -30,7 +30,7 @@ namespace FutureStepsAcademy.API.Services
 
         public async Task<IEnumerable<Course>> GetAllCourses()
         {
-            var courses = await _unitOfWork.Course.GetAll();
+            var courses = await _unitOfWork.Course.GetAllWithRelations();
             return courses;
         }
 

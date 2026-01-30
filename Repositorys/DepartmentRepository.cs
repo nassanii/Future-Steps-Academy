@@ -21,6 +21,14 @@ namespace FutureStepsAcademy.API.Repositorys
             return Departments;
         }
 
+        public async Task<IEnumerable<Department>> GetAllWithRelations()
+        {
+            var departments = await _db.Departments
+                .Include(d => d.Course_Departments).ThenInclude(cd => cd.course)
+                .ToListAsync();
+            return departments;
+        }
+
         public async Task Update(Department obj)
         {
             _db.Departments.Update(obj);
