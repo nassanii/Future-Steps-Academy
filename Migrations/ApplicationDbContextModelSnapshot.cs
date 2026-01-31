@@ -118,6 +118,9 @@ namespace FutureStepsAcademy.API.Migrations
                     b.Property<DateTime>("ExpenseDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("PaymentMethod")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("TeacherId")
                         .HasColumnType("int");
 
@@ -293,6 +296,9 @@ namespace FutureStepsAcademy.API.Migrations
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalDebt")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("TotalExpenses")
                         .HasColumnType("decimal(18,2)");

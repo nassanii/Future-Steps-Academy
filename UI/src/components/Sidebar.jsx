@@ -1,7 +1,8 @@
 import React from 'react';
-import { LayoutDashboard, Users, GraduationCap, Building2, BookOpen, LogOut, Settings, X, GraduationCap as CapIcon } from 'lucide-react';
+import { LayoutDashboard, Users, GraduationCap, Building2, BookOpen, LogOut, Settings, X, GraduationCap as CapIcon, Award, DollarSign, BarChart3 } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
     const navigate = useNavigate();
@@ -14,6 +15,9 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
         { icon: GraduationCap, label: 'Teachers', path: '/teachers' },
         { icon: Building2, label: 'Departments', path: '/departments' },
         { icon: BookOpen, label: 'Courses', path: '/courses' },
+        { icon: Award, label: 'Grades', path: '/grades' },
+        { icon: DollarSign, label: 'Finance', path: '/expenses' },
+        { icon: BarChart3, label: 'Reports', path: '/reports' },
     ];
 
     const handleLogout = () => {
@@ -60,23 +64,34 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen }) => {
 
                 {/* Navigation */}
                 <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
-                    {menuItems.map((item) => {
-                        const isActive = location.pathname === item.path;
-                        return (
-                            <button
-                                key={item.path}
-                                onClick={() => handleClick(item.path)}
-                                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 group
-                                    ${isActive
-                                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25'
-                                        : 'text-slate-400 hover:bg-white/5 hover:text-white'
-                                    }`}
-                            >
-                                <item.icon className={`w-5 h-5 transition-colors ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-white'}`} />
-                                <span className="font-medium">{item.label}</span>
-                            </button>
-                        );
-                    })}
+                    <AnimatePresence>
+                        {menuItems.map((item) => {
+                            const isActive = location.pathname === item.path;
+                            return (
+                                <button
+                                    key={item.path}
+                                    onClick={() => handleClick(item.path)}
+                                    className={`relative w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-colors duration-300 group
+                                        ${isActive ? 'text-white' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+                                >
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="activeTab"
+                                            className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg shadow-blue-500/25"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10 flex items-center gap-3">
+                                        <item.icon className="w-5 h-5" />
+                                        <span className="font-medium">{item.label}</span>
+                                    </span>
+                                </button>
+                            );
+                        })}
+                    </AnimatePresence>
                 </nav>
 
                 {/* User & Logout */}

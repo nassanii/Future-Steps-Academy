@@ -2,16 +2,26 @@ import React, { useEffect, useState } from 'react';
 import DashboardLayout from '../layouts/DashboardLayout';
 import { getAllStudents, createStudent, updateStudent, deleteStudent } from '../services/studentService';
 import { getAllDepartments } from '../services/departmentService';
-import { Plus, Search, Filter, MoreVertical, Edit2, Trash2, Users } from 'lucide-react';
+import { getAllCourses } from '../services/courseService';
+import { Plus, Search, Filter, MoreVertical, Edit2, Trash2, Users, Award, Eye, BookOpen } from 'lucide-react';
 import StudentModal from '../components/StudentModal';
+import CourseListModal from '../components/CourseListModal';
+import StudentGradesModal from '../components/StudentGradesModal';
+import { useToast } from '../context/ToastContext';
 
 const Students = () => {
     const [students, setStudents] = useState([]);
     const [departments, setDepartments] = useState([]);
+    const [courses, setCourses] = useState([]);
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentStudent, setCurrentStudent] = useState(null);
+    const [isGradesModalOpen, setIsGradesModalOpen] = useState(false);
+    const [selectedStudentForGrades, setSelectedStudentForGrades] = useState(null);
+    const [isCourseListModalOpen, setIsCourseListModalOpen] = useState(false);
+    const [selectedStudentCourses, setSelectedStudentCourses] = useState({ name: '', courses: [] });
+    const toast = useToast();
 
     useEffect(() => {
         fetchData();
@@ -20,14 +30,17 @@ const Students = () => {
     const fetchData = async () => {
         setLoading(true);
         try {
-            const [studentsData, departmentsData] = await Promise.all([
+            const [studentsData, departmentsData, coursesData] = await Promise.all([
                 getAllStudents(),
-                getAllDepartments()
+                getAllDepartments(),
+                getAllCourses()
             ]);
             setStudents(studentsData);
             setDepartments(departmentsData);
+            setCourses(coursesData);
         } catch (error) {
             console.error("Failed to fetch data:", error);
+            toast.error("Failed to load students data");
         } finally {
             setLoading(false);
         }
@@ -36,11 +49,12 @@ const Students = () => {
     const handleCreate = async (data) => {
         try {
             await createStudent(data);
+            toast.success("Student created successfully!");
             setIsModalOpen(false);
             fetchData(); // Refresh list
         } catch (error) {
             console.error("Failed to create student:", error);
-            alert("Failed to create student: " + (error.message || "Unknown error"));
+            toast.error("Failed to create student: " + (error.message || "Unknown error"));
         }
     };
 
@@ -49,25 +63,27 @@ const Students = () => {
         try {
             const updatedData = { ...data, studentID: currentStudent.studentID }; // Ensure ID is present
             await updateStudent(currentStudent.studentID, updatedData);
+            toast.success("Student updated successfully!");
             setIsModalOpen(false);
             setCurrentStudent(null);
             fetchData();
         } catch (error) {
             console.error("Failed to update student:", error);
-            alert("Failed to update student: " + (error.message || "Unknown error"));
+            toast.error("Failed to update student: " + (error.message || "Unknown error"));
         }
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm("Are you sure you want to delete this student?")) {
+        toast.confirm("Are you sure you want to delete this student?", async () => {
             try {
                 await deleteStudent(id);
+                toast.success("Student deleted successfully!");
                 fetchData();
             } catch (error) {
                 console.error("Failed to delete student:", error);
-                alert("Failed to delete student");
+                toast.error("Failed to delete student");
             }
-        }
+        });
     };
 
     const openCreateModal = () => {
@@ -80,10 +96,24 @@ const Students = () => {
         setIsModalOpen(true);
     };
 
+    const openGradesModal = (student) => {
+        setSelectedStudentForGrades(student);
+        setIsGradesModalOpen(true);
+    };
+
+    const openCourseListModal = (student) => {
+        setSelectedStudentCourses({
+            name: `${student.firstName} ${student.lastName}`,
+            courses: student.courses || []
+        });
+        setIsCourseListModalOpen(true);
+    };
+
     const filteredStudents = students.filter(student =>
         student.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
         student.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (student.email && student.email.toLowerCase().includes(searchTerm.toLowerCase()))
+        (student.email && student.email.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        student.studentID.toString() === searchTerm
     );
 
     return (
@@ -108,7 +138,7 @@ const Students = () => {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                     <input
                         type="text"
-                        placeholder="Search students..."
+                        placeholder="Search students by name, email, or ID..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-white/5 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-all placeholder:text-slate-500"
@@ -188,7 +218,9 @@ const Students = () => {
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Student</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Contact</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Department</th>
+                                <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Courses</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Year</th>
+                                <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Grades</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider text-right">Actions</th>
                             </tr>
                         </thead>
@@ -226,7 +258,28 @@ const Students = () => {
                                                 {student.departmentName || 'General'}
                                             </span>
                                         </td>
+                                        <td className="p-6">
+                                            {student.courses && student.courses.length > 0 ? (
+                                                <button
+                                                    onClick={() => openCourseListModal(student)}
+                                                    className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 rounded-lg text-blue-400 hover:text-blue-300 font-medium text-sm transition-colors"
+                                                >
+                                                    <BookOpen className="w-4 h-4" />
+                                                    {student.courses.length} Course{student.courses.length > 1 ? 's' : ''}
+                                                </button>
+                                            ) : (
+                                                <span className="text-slate-600 text-sm italic">No courses</span>
+                                            )}
+                                        </td>
                                         <td className="p-6 text-base text-slate-300 font-medium">{student.year}</td>
+                                        <td className="p-6">
+                                            <button
+                                                onClick={() => openGradesModal(student)}
+                                                className="flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 rounded-lg text-sm font-medium transition-colors border border-purple-500/20"
+                                            >
+                                                <Eye size={16} /> View
+                                            </button>
+                                        </td>
                                         <td className="p-6 text-right">
                                             <div className="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <button
@@ -249,12 +302,27 @@ const Students = () => {
                 </div>
             </div>
 
+            <CourseListModal
+                isOpen={isCourseListModalOpen}
+                onClose={() => setIsCourseListModalOpen(false)}
+                title="Student Courses"
+                subtitle={selectedStudentCourses.name}
+                courses={selectedStudentCourses.courses}
+            />
+
             <StudentModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 onSave={currentStudent ? handleUpdate : handleCreate}
                 initialData={currentStudent}
                 departments={departments}
+                courses={courses}
+            />
+
+            <StudentGradesModal
+                isOpen={isGradesModalOpen}
+                onClose={() => setIsGradesModalOpen(false)}
+                student={selectedStudentForGrades}
             />
         </DashboardLayout>
     );

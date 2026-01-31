@@ -1,7 +1,7 @@
 import React from 'react';
-import { X, BookOpen, MapPin } from 'lucide-react';
+import { X, BookOpen } from 'lucide-react';
 
-const CourseListModal = ({ isOpen, onClose, title = "Assigned Courses", subtitle, courses, address }) => {
+const CourseListModal = ({ isOpen, onClose, title = "Courses", subtitle, courses }) => {
     if (!isOpen) return null;
 
     return (
@@ -29,42 +29,24 @@ const CourseListModal = ({ isOpen, onClose, title = "Assigned Courses", subtitle
 
                 {/* Content */}
                 <div className="p-6 max-h-[60vh] overflow-y-auto space-y-6">
-
-                    {/* Address Section - Only show if address is provided */}
-                    {address && (
-                        <div className="space-y-2">
-                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
-                                <MapPin className="w-3 h-3" /> Address
-                            </h3>
-                            <div className="p-3 bg-white/5 border border-white/5 rounded-xl text-slate-200 text-sm">
-                                {address}
-                            </div>
-                        </div>
-                    )}
-
                     {/* Courses Section */}
                     <div className="space-y-2">
                         <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
-                            <BookOpen className="w-3 h-3" /> Assigned Courses
+                            <BookOpen className="w-3 h-3" /> Enrolled Courses
                         </h3>
                         {courses && courses.length > 0 ? (
                             <div className="space-y-3">
                                 {courses.map((course, index) => (
                                     <div key={index} className="flex items-center justify-between p-4 bg-white/5 border border-white/5 rounded-xl">
                                         <span className="text-slate-200 font-medium">
-                                            {course.courseName || course.name || `Course ${index + 1} `}
+                                            {typeof course === 'object' ? course.courseName : course}
                                         </span>
-                                        {course.courseCode && (
-                                            <span className="text-xs text-slate-500 bg-white/5 px-2 py-1 rounded">
-                                                {course.courseCode}
-                                            </span>
-                                        )}
                                     </div>
                                 ))}
                             </div>
                         ) : (
                             <div className="text-center py-6 bg-white/5 rounded-xl border border-white/5 border-dashed">
-                                <p className="text-slate-500 text-sm">No courses assigned.</p>
+                                <p className="text-slate-500 text-sm">No courses enrolled.</p>
                             </div>
                         )}
                     </div>

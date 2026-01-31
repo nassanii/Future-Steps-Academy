@@ -8,6 +8,7 @@ public class AddStudentRequestDTO
         public string Year { get; set; }
 
         // FK 
-         public int DepartmentID { get; set; }
+    public int DepartmentID { get; set; }
 
+    public List<int> CourseIDs { get; set; } = new List<int>();
 }

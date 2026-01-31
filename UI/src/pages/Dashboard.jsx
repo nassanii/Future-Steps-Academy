@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '../layouts/DashboardLayout';
 import { useAuth } from '../hooks/useAuth';
 import { Users, GraduationCap, BookOpen, TrendingUp } from 'lucide-react';
+import { getAllStudents } from '../services/studentService';
+import { getAllTeachers } from '../services/teacherService';
+import { getAllCourses } from '../services/courseService';
+import { getAllDepartments } from '../services/departmentService';
 
 const StatCard = ({ title, value, label, icon: Icon, color }) => (
     <div className="bg-slate-800/50 backdrop-blur-md border border-white/5 rounded-2xl p-6 hover:bg-slate-800/80 transition-all duration-300 group">
@@ -23,6 +28,49 @@ const StatCard = ({ title, value, label, icon: Icon, color }) => (
 
 const Dashboard = () => {
     const { user } = useAuth();
+    const navigate = useNavigate();
+    const [stats, setStats] = useState({
+        students: 0,
+        teachers: 0,
+        courses: 0,
+        departments: 0
+    });
+    const [recentStudents, setRecentStudents] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchDashboardData = async () => {
+            try {
+                const [studentsData, teachersData, coursesData, departmentsData] = await Promise.all([
+                    getAllStudents(),
+                    getAllTeachers(),
+                    getAllCourses(),
+                    getAllDepartments()
+                ]);
+
+                setStats({
+                    students: studentsData.length,
+                    teachers: teachersData.length,
+                    courses: coursesData.length,
+                    departments: departmentsData.length
+                });
+
+                // Get recent students (assuming higher ID = more recent)
+                // If there's a createdAt field, use that. Otherwise sort by ID.
+                const recent = [...studentsData]
+                    .sort((a, b) => b.studentID - a.studentID)
+                    .slice(0, 5);
+                setRecentStudents(recent);
+
+            } catch (error) {
+                console.error("Error fetching dashboard data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchDashboardData();
+    }, []);
 
     return (
         <DashboardLayout>
@@ -37,66 +85,84 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
                 <StatCard
                     title="Total Students"
-                    value="1,248"
+                    value={loading ? "..." : stats.students}
                     label="Active enrollments"
                     icon={Users}
                     color="from-blue-500 to-cyan-500"
                 />
                 <StatCard
                     title="Total Teachers"
-                    value="84"
+                    value={loading ? "..." : stats.teachers}
                     label="Qualified instructors"
                     icon={GraduationCap}
                     color="from-purple-500 to-pink-500"
                 />
                 <StatCard
                     title="Active Courses"
-                    value="42"
-                    label="Across 6 departments"
+                    value={loading ? "..." : stats.courses}
+                    label={`Across ${stats.departments} departments`}
                     icon={BookOpen}
                     color="from-orange-500 to-red-500"
                 />
                 <StatCard
                     title="Total Departments"
-                    value="6"
+                    value={loading ? "..." : stats.departments}
                     label="Operating faculties"
                     icon={BookOpen}
                     color="from-emerald-500 to-teal-500"
                 />
             </div>
 
-            {/* Recent Activity Section (Placeholder) */}
+            {/* Recent Activity Section */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2 bg-slate-800/30 backdrop-blur-md border border-white/5 rounded-2xl p-6 min-h-[300px]">
                     <h3 className="text-white font-bold text-lg mb-6">Recent Enrolments</h3>
                     <div className="space-y-4">
-                        {/* Placeholder List */}
-                        {[1, 2, 3].map((i) => (
-                            <div key={i} className="flex items-center justify-between p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-slate-700 animate-pulse" />
-                                    <div className="space-y-2">
-                                        <div className="w-32 h-4 bg-slate-700 rounded animate-pulse" />
-                                        <div className="w-20 h-3 bg-slate-800 rounded animate-pulse" />
+                        {loading ? (
+                            <p className="text-slate-500">Loading recent activity...</p>
+                        ) : recentStudents.length > 0 ? (
+                            recentStudents.map((student) => (
+                                <div key={student.studentID} className="flex items-center justify-between p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center text-blue-400 font-bold border border-blue-500/10">
+                                            {student.firstName?.[0]}{student.lastName?.[0]}
+                                        </div>
+                                        <div>
+                                            <p className="text-white font-medium">{student.firstName} {student.lastName}</p>
+                                            <p className="text-xs text-slate-400">ID: #{student.studentID}</p>
+                                        </div>
+                                    </div>
+                                    <div className="px-3 py-1 bg-green-500/10 text-green-400 rounded-lg text-xs font-medium border border-green-500/20">
+                                        Active
                                     </div>
                                 </div>
-                                <div className="w-16 h-6 bg-slate-700 rounded animate-pulse" />
-                            </div>
-                        ))}
+                            ))
+                        ) : (
+                            <p className="text-slate-500">No recent enrollments found.</p>
+                        )}
                     </div>
                 </div>
 
                 <div className="bg-slate-800/30 backdrop-blur-md border border-white/5 rounded-2xl p-6 min-h-[300px]">
                     <h3 className="text-white font-bold text-lg mb-6">Quick Actions</h3>
                     <div className="space-y-3">
-                        <button className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl text-white font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all text-sm">
-                            Add New Student
+                        <button
+                            onClick={() => navigate('/students')}
+                            className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl text-white font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all text-sm flex items-center justify-center gap-2"
+                        >
+                            <Users className="w-4 h-4" /> Add New Student
                         </button>
-                        <button className="w-full py-3 px-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all text-sm">
-                            Create Course
+                        <button
+                            onClick={() => navigate('/courses')}
+                            className="w-full py-3 px-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all text-sm flex items-center justify-center gap-2"
+                        >
+                            <BookOpen className="w-4 h-4" /> Manage Courses
                         </button>
-                        <button className="w-full py-3 px-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all text-sm">
-                            Generate Report
+                        <button
+                            onClick={() => navigate('/reports')}
+                            className="w-full py-3 px-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all text-sm flex items-center justify-center gap-2"
+                        >
+                            <TrendingUp className="w-4 h-4" /> View Reports
                         </button>
                     </div>
                 </div>

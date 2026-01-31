@@ -51,6 +51,17 @@ namespace FutureStepsAcademy.Controllers
             // DTO to Domain Model
             var DomainStudent = _mapper.Map<Student>(addStudentRequestDTO);
 
+            if (addStudentRequestDTO.CourseIDs != null && addStudentRequestDTO.CourseIDs.Any())
+            {
+                foreach (var courseId in addStudentRequestDTO.CourseIDs)
+                {
+                    DomainStudent.student_Courses.Add(new Student_Course
+                    {
+                        CourseID = courseId
+                    });
+                }
+            }
+
             await _studentservice.AddStudent(DomainStudent);
             // Domain Model To DTO
             var studentDto = _mapper.Map<StudentDTO>(DomainStudent);

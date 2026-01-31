@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, BookOpen, Save, Check } from 'lucide-react';
 
-const CourseModal = ({ isOpen, onClose, onSave, initialData, departments = [], teachers = [] }) => {
+const CourseModal = ({ isOpen, onClose, onSave, initialData, departments = [], teachers = [], defaultDepartmentId }) => {
     const [formData, setFormData] = useState({
         courseName: '',
         CourseCode: '',
@@ -22,11 +22,11 @@ const CourseModal = ({ isOpen, onClose, onSave, initialData, departments = [], t
             setFormData({
                 courseName: '',
                 CourseCode: '',
-                departmentIDs: [],
+                departmentIDs: defaultDepartmentId ? [defaultDepartmentId] : [],
                 TeachersIDs: []
             });
         }
-    }, [initialData, isOpen]);
+    }, [initialData, isOpen, defaultDepartmentId]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

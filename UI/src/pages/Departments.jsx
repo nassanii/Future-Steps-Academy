@@ -5,6 +5,8 @@ import { Plus, Search, Filter, Edit2, Trash2, Building2, BookOpen } from 'lucide
 import DepartmentModal from '../components/DepartmentModal';
 import CourseListModal from '../components/CourseListModal';
 
+import { useToast } from '../context/ToastContext';
+
 const Departments = () => {
     const [departments, setDepartments] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -15,6 +17,7 @@ const Departments = () => {
     const [isCourseModalOpen, setIsCourseModalOpen] = useState(false);
     const [currentDepartment, setCurrentDepartment] = useState(null);
     const [selectedDeptCourses, setSelectedDeptCourses] = useState({ name: '', courses: [] });
+    const toast = useToast();
 
     useEffect(() => {
         fetchData();
@@ -27,6 +30,7 @@ const Departments = () => {
             setDepartments(data);
         } catch (error) {
             console.error("Failed to fetch departments:", error);
+            toast.error("Failed to load departments");
         } finally {
             setLoading(false);
         }
@@ -35,11 +39,12 @@ const Departments = () => {
     const handleCreate = async (data) => {
         try {
             await createDepartment(data);
+            toast.success("Department created successfully!");
             setIsModalOpen(false);
             fetchData();
         } catch (error) {
             console.error("Failed to create department:", error);
-            alert("Failed to create department: " + (error.message || "Unknown error"));
+            toast.error("Failed to create department: " + (error.message || "Unknown error"));
         }
     };
 
@@ -48,25 +53,27 @@ const Departments = () => {
         try {
             const updatedData = { ...data, departmentID: currentDepartment.departmentID };
             await updateDepartment(currentDepartment.departmentID, updatedData);
+            toast.success("Department updated successfully!");
             setIsModalOpen(false);
             setCurrentDepartment(null);
             fetchData();
         } catch (error) {
             console.error("Failed to update department:", error);
-            alert("Failed to update department: " + (error.message || "Unknown error"));
+            toast.error("Failed to update department: " + (error.message || "Unknown error"));
         }
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm("Are you sure you want to delete this department?")) {
+        toast.confirm("Are you sure you want to delete this department?", async () => {
             try {
                 await deleteDepartment(id);
+                toast.success("Department deleted successfully!");
                 fetchData();
             } catch (error) {
                 console.error("Failed to delete department:", error);
-                alert("Failed to delete department");
+                toast.error("Failed to delete department");
             }
-        }
+        });
     };
 
     const openCreateModal = () => {
@@ -82,6 +89,7 @@ const Departments = () => {
     const openCourseModal = (dept) => {
         setSelectedDeptCourses({
             name: `${dept.departmentName} (${dept.department_Code})`,
+            id: dept.departmentID,
             courses: dept.courses || []
         });
         setIsCourseModalOpen(true);
@@ -179,6 +187,7 @@ const Departments = () => {
                             <tr className="border-b border-white/5 bg-white/5">
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Department Name</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Code</th>
+                                <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Courses</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">ID</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider text-right">Actions</th>
                             </tr>
@@ -208,16 +217,19 @@ const Departments = () => {
                                                 {dept.department_Code}
                                             </span>
                                         </td>
+                                        <td className="p-6">
+                                            <button
+                                                onClick={() => openCourseModal(dept)}
+                                                className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 rounded-lg text-sm font-medium transition-colors border border-blue-500/20"
+                                            >
+                                                <BookOpen size={16} /> View Courses
+                                            </button>
+                                        </td>
                                         <td className="p-6 text-slate-400">
                                             #{dept.departmentID}
                                         </td>
                                         <td className="p-6 text-right">
                                             <div className="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                <button
-                                                    onClick={() => openCourseModal(dept)}
-                                                    className="p-3 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-all transform hover:scale-110" title="View Courses">
-                                                    <BookOpen className="w-5 h-5" />
-                                                </button>
                                                 <button
                                                     onClick={() => openEditModal(dept)}
                                                     className="p-3 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-all transform hover:scale-110" title="Edit">
@@ -251,6 +263,8 @@ const Departments = () => {
                 title="Department Courses"
                 subtitle={selectedDeptCourses.name}
                 courses={selectedDeptCourses.courses}
+                departmentId={selectedDeptCourses.id}
+                onCoursesUpdated={fetchData}
             />
         </DashboardLayout>
     );

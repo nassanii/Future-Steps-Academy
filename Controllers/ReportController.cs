@@ -26,17 +26,29 @@ namespace FutureStepsAcademy.API.Controllers
         }
 
         [HttpPost("generate-report")]
-        public async Task<ActionResult<ProfitReportDTO>> GenerateAndSaveReport()
+        public async Task<ActionResult<ProfitReportDTO>> GenerateAndSaveReport([FromQuery] int month, [FromQuery] int year)
         {
-            var invoices = await _invoiceService.GetAllInvoicesWithDetails();
-            var expenses = await _expenseService.GetAllExpense(null, null);
+            var filteredInvoices = await _db.invoices
+                .Where(i => i.IssueDate.Month == month && i.IssueDate.Year == year)
+                .ToListAsync();
 
-            decimal totalIncome = invoices.Sum(i => i.TotalAmount);
-            decimal totalExpenses = expenses.Sum(e => e.Amount);
+            var filteredExpenses = await _db.expenses
+                .Include(e => e.Category)
+                .Where(e => e.ExpenseDate.Month == month && e.ExpenseDate.Year == year)
+                .ToListAsync();
+
+            decimal totalDebt = filteredInvoices.Sum(i => i.Balance);
+            // Total Income should be the amount PAID, not total invoice amount
+            decimal totalIncome = filteredInvoices.Sum(i => i.TotalAmount - i.Balance);
+            
+            decimal totalExpenses = filteredExpenses.Sum(e => e.Amount);
             decimal profitOrLoss = totalIncome - totalExpenses;
-            string status = profitOrLoss > 0 ? "Profit" : profitOrLoss < 0 ? "Loss" : "Break-even";
+            
+            string monthName = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
+            string baseStatus = profitOrLoss > 0 ? "Profit" : profitOrLoss < 0 ? "Loss" : "Break-even";
+            string status = $"{baseStatus} ({monthName} {year})";
 
-            var expensesByCategory = expenses
+            var expensesByCategory = filteredExpenses
                 .GroupBy(e => e.CategoryId)
                 .Select(g => new ExpenseByCategoryDTO
                 {
@@ -49,6 +61,7 @@ namespace FutureStepsAcademy.API.Controllers
             var reportDto = new ProfitReportDTO
             {
                 TotalIncome = totalIncome,
+                TotalDebt = totalDebt,
                 TotalExpenses = totalExpenses,
                 ProfitOrLoss = profitOrLoss,
                 Status = status,
@@ -60,6 +73,7 @@ namespace FutureStepsAcademy.API.Controllers
             var report = new ProfitReport
             {
                 TotalIncome = reportDto.TotalIncome,
+                TotalDebt = reportDto.TotalDebt,
                 TotalExpenses = reportDto.TotalExpenses,
                 ProfitOrLoss = reportDto.ProfitOrLoss,
                 Status = reportDto.Status,
@@ -90,6 +104,7 @@ namespace FutureStepsAcademy.API.Controllers
             var reportsDto = reports.Select(r => new ProfitReportDTO
             {
                 TotalIncome = r.TotalIncome,
+                TotalDebt = r.TotalDebt,
                 TotalExpenses = r.TotalExpenses,
                 ProfitOrLoss = r.ProfitOrLoss,
                 Status = r.Status,

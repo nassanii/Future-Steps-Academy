@@ -31,7 +31,7 @@ namespace FutureStepsAcademy.API.Services
 
         public async Task<IEnumerable<Expense>> GetAllExpense(int? TeacherID, int? CategoryID)
         {
-            var Expenses = await _unitOfWork.Expense.GetAllExpensesAsync(TeacherID, CategoryID);
+            var Expenses = await _unitOfWork.Expense.GetAllExpensesAsync(CategoryID, TeacherID);
             return Expenses;
         }
 

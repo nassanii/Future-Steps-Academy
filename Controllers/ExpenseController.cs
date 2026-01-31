@@ -54,7 +54,8 @@ namespace FutureStepsAcademy.API.Controllers
             try
             {
                 var expenses = await _expenseService.GetAllExpense(TeacherId, CategoryId);
-                return Ok(expenses);
+                var expensesDTO = _mapper.Map<List<ExpenseDTO>>(expenses);
+                return Ok(expensesDTO);
             }
             catch (Exception ex)
             {
@@ -68,7 +69,8 @@ namespace FutureStepsAcademy.API.Controllers
             try
             {
                 var Expense = await _expenseService.GetById(id);
-                return Ok(Expense);
+                var ExpenseDTO = _mapper.Map<ExpenseDTO>(Expense);
+                return Ok(ExpenseDTO);
             }
             catch (Exception ex)
             {

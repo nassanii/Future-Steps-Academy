@@ -1,4 +1,5 @@
 ﻿using FutureStepsAcademy.API.Models;
+using System.Text.Json.Serialization;
 using FutureStepsAcademy.API.Repositorys;
 using FutureStepsAcademy.API.Repositorys.IRepository;
 using FutureStepsAcademy.API.Services;
@@ -75,7 +76,8 @@ builder.Services.AddCors(options =>
 });
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+   x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddEndpointsApiExplorer();
 
 // Configure Swagger with JWT Authentication

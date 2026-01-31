@@ -7,6 +7,10 @@ import { Plus, Search, Filter, Edit2, Trash2, BookOpen, Building2 } from 'lucide
 import CourseModal from '../components/CourseModal';
 import DepartmentListModal from '../components/DepartmentListModal';
 
+import { useToast } from '../context/ToastContext';
+import StudentListModal from '../components/StudentListModal';
+import { Users } from 'lucide-react';
+
 const Courses = () => {
     const [courses, setCourses] = useState([]);
     const [teachers, setTeachers] = useState([]);
@@ -17,8 +21,11 @@ const Courses = () => {
     // Modal States
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isDepartmentModalOpen, setIsDepartmentModalOpen] = useState(false);
+    const [isStudentModalOpen, setIsStudentModalOpen] = useState(false);
     const [currentCourse, setCurrentCourse] = useState(null);
     const [selectedCourseDepartments, setSelectedCourseDepartments] = useState({ name: '', departments: [] });
+    const [selectedCourseStudents, setSelectedCourseStudents] = useState({ name: '', students: [] });
+    const toast = useToast();
 
     useEffect(() => {
         fetchData();
@@ -38,6 +45,7 @@ const Courses = () => {
             console.log("Courses fetched:", coursesData);
         } catch (error) {
             console.error("Failed to fetch data:", error);
+            toast.error("Failed to load courses");
         } finally {
             setLoading(false);
         }
@@ -47,12 +55,13 @@ const Courses = () => {
         try {
             console.log("Creating course with data:", data);
             await createCourse(data);
+            toast.success("Course created successfully!");
             setIsModalOpen(false);
             fetchData();
         } catch (error) {
             console.error("Failed to create course:", error);
             console.error("Error details:", error.response?.data);
-            alert("Failed to create course: " + (error.response?.data?.message || error.message || "Unknown error"));
+            toast.error("Failed to create course: " + (error.response?.data?.message || error.message || "Unknown error"));
         }
     };
 
@@ -62,26 +71,28 @@ const Courses = () => {
             const updatedData = { ...data, courseID: currentCourse.courseID };
             console.log("Updating course with data:", updatedData);
             await updateCourse(currentCourse.courseID, updatedData);
+            toast.success("Course updated successfully!");
             setIsModalOpen(false);
             setCurrentCourse(null);
             fetchData();
         } catch (error) {
             console.error("Failed to update course:", error);
             console.error("Error details:", error.response?.data);
-            alert("Failed to update course: " + (error.response?.data?.message || error.message || "Unknown error"));
+            toast.error("Failed to update course: " + (error.response?.data?.message || error.message || "Unknown error"));
         }
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm("Are you sure you want to delete this course?")) {
+        toast.confirm("Are you sure you want to delete this course?", async () => {
             try {
                 await deleteCourse(id);
+                toast.success("Course deleted successfully!");
                 fetchData();
             } catch (error) {
                 console.error("Failed to delete course:", error);
-                alert("Failed to delete course");
+                toast.error("Failed to delete course");
             }
-        }
+        });
     };
 
     const openCreateModal = () => {
@@ -100,6 +111,14 @@ const Courses = () => {
             departments: course.departmenters || []
         });
         setIsDepartmentModalOpen(true);
+    };
+
+    const openStudentModal = (course) => {
+        setSelectedCourseStudents({
+            name: `${course.courseName} (${course.courseCode})`,
+            students: course.students || []
+        });
+        setIsStudentModalOpen(true);
     };
 
     const filteredCourses = courses.filter(course =>
@@ -176,13 +195,19 @@ const Courses = () => {
                                         <span className="text-slate-300">None</span>
                                     )}
                                 </div>
-                                <div className="flex justify-between text-sm">
-                                    <span className="text-slate-500">Teachers</span>
-                                    <span className="text-slate-300">
-                                        {course.teachers && course.teachers.length > 0
-                                            ? course.teachers.length
-                                            : 'None'}
-                                    </span>
+                                <div className="flex justify-between text-sm items-center">
+                                    <span className="text-slate-500">Students</span>
+                                    {course.students && course.students.length > 0 ? (
+                                        <button
+                                            onClick={() => openStudentModal(course)}
+                                            className="flex items-center gap-1 px-2 py-1 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 rounded-lg text-blue-400 hover:text-blue-300 font-medium text-xs transition-colors"
+                                        >
+                                            <Users className="w-3 h-3" />
+                                            {course.students.length}
+                                        </button>
+                                    ) : (
+                                        <span className="text-slate-300">None</span>
+                                    )}
                                 </div>
                             </div>
 
@@ -214,6 +239,7 @@ const Courses = () => {
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Course Name</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Code</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Departments</th>
+                                <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Students</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Teachers</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider text-right">Actions</th>
                             </tr>
@@ -221,11 +247,11 @@ const Courses = () => {
                         <tbody className="divide-y divide-white/5">
                             {loading ? (
                                 <tr>
-                                    <td colSpan="5" className="p-8 text-center text-slate-400">Loading courses...</td>
+                                    <td colSpan="6" className="p-8 text-center text-slate-400">Loading courses...</td>
                                 </tr>
                             ) : filteredCourses.length === 0 ? (
                                 <tr>
-                                    <td colSpan="5" className="p-8 text-center text-slate-400">No courses found.</td>
+                                    <td colSpan="6" className="p-8 text-center text-slate-400">No courses found.</td>
                                 </tr>
                             ) : (
                                 filteredCourses.map((course) => (
@@ -254,6 +280,19 @@ const Courses = () => {
                                                 </button>
                                             ) : (
                                                 <span className="text-slate-500">-</span>
+                                            )}
+                                        </td>
+                                        <td className="p-6">
+                                            {course.students && course.students.length > 0 ? (
+                                                <button
+                                                    onClick={() => openStudentModal(course)}
+                                                    className="flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 rounded-lg text-blue-400 hover:text-blue-300 font-medium text-sm transition-colors"
+                                                >
+                                                    <Users className="w-4 h-4" />
+                                                    {course.students.length} Student{course.students.length > 1 ? 's' : ''}
+                                                </button>
+                                            ) : (
+                                                <span className="text-slate-500 text-sm">No Students</span>
                                             )}
                                         </td>
                                         <td className="p-6 text-slate-300">
@@ -296,6 +335,14 @@ const Courses = () => {
                 title="Course Departments"
                 subtitle={selectedCourseDepartments.name}
                 departments={selectedCourseDepartments.departments}
+            />
+
+            <StudentListModal
+                isOpen={isStudentModalOpen}
+                onClose={() => setIsStudentModalOpen(false)}
+                title="Enrolled Students"
+                subtitle={selectedCourseStudents.name}
+                students={selectedCourseStudents.students}
             />
         </DashboardLayout>
     );

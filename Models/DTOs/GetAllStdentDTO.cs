@@ -10,5 +10,7 @@
         public string Year { get; set; }
         // FK
         public string DepartmentName { get; set; }
+
+        public List<string> Courses { get; set; } = new List<string>();
     }
 }

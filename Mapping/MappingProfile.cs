@@ -21,7 +21,9 @@ public class MappingProfile : Profile
 
         CreateMap<Student, GetAllStdentDTO>()
      .ForMember(dest => dest.DepartmentName,
-                opt => opt.MapFrom(src => src.department.DepartmentName));
+                opt => opt.MapFrom(src => src.department.DepartmentName))
+     .ForMember(dest => dest.Courses,
+                opt => opt.MapFrom(src => src.student_Courses.Select(sc => sc.course.courseName)));
 
 
         CreateMap<Teacher, TeacherDTO>()

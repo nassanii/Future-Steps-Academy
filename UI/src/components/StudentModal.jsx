@@ -1,28 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { X, Save } from 'lucide-react';
 
-const StudentModal = ({ isOpen, onClose, onSave, initialData, departments }) => {
+const StudentModal = ({ isOpen, onClose, onSave, initialData, departments, courses }) => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         phone: '',
         address: '',
         year: '',
-        departmentID: ''
+        departmentID: '',
+        courseIDs: []
     });
 
     useEffect(() => {
         if (initialData) {
+            // Check for student_Courses (from detailed view) or courseIDs if mapped
+            const existingCourses = initialData.student_Courses
+                ? initialData.student_Courses.map(sc => sc.courseID)
+                : (initialData.courseIDs || []);
+
             setFormData({
                 firstName: initialData.firstName || '',
                 lastName: initialData.lastName || '',
                 phone: initialData.phone || '',
                 address: initialData.address || '',
                 year: initialData.year || '',
-                departmentID: initialData.departmentID || initialData.departmentName || '' // Handle case where ID might not be directly available or need mapping
+                departmentID: initialData.departmentID || initialData.departmentName || '',
+                courseIDs: existingCourses
             });
 
-            // Attempt to map department name to ID if only name is provided in initialData (common in display DTOs)
+            // Attempt to map department name to ID if only name is provided in initialData
             if (initialData.departmentName && !initialData.departmentID && departments) {
                 const dept = departments.find(d => d.departmentName === initialData.departmentName);
                 if (dept) {
@@ -37,7 +44,8 @@ const StudentModal = ({ isOpen, onClose, onSave, initialData, departments }) => 
                 phone: '',
                 address: '',
                 year: '',
-                departmentID: ''
+                departmentID: '',
+                courseIDs: []
             });
         }
     }, [initialData, departments]);
@@ -154,6 +162,54 @@ const StudentModal = ({ isOpen, onClose, onSave, initialData, departments }) => 
                                     </option>
                                 ))}
                             </select>
+                        </div>
+                    </div>
+
+                    {/* Course Selection */}
+                    <div className="space-y-2">
+                        <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">
+                            {formData.departmentID ? 'Department Courses' : 'Select a Department to view Courses'}
+                        </label>
+                        <div className="w-full bg-black/20 border border-white/10 rounded-xl p-4 max-h-40 overflow-y-auto">
+                            {(() => {
+                                const filteredCourses = formData.departmentID
+                                    ? courses.filter(course =>
+                                        course.departmenters && course.departmenters.some(d => d.departmentID === Number(formData.departmentID))
+                                    )
+                                    : []; // Empty if no department selected
+
+                                return filteredCourses.length > 0 ? (
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                        {filteredCourses.map(course => (
+                                            <label key={course.courseID} className="flex items-center gap-2 cursor-pointer group">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={formData.courseIDs.includes(course.courseID)}
+                                                    onChange={(e) => {
+                                                        const checked = e.target.checked;
+                                                        setFormData(prev => {
+                                                            const currentIDs = prev.courseIDs || [];
+                                                            if (checked) {
+                                                                return { ...prev, courseIDs: [...currentIDs, course.courseID] };
+                                                            } else {
+                                                                return { ...prev, courseIDs: currentIDs.filter(id => id !== course.courseID) };
+                                                            }
+                                                        });
+                                                    }}
+                                                    className="w-4 h-4 rounded border-slate-600 text-blue-600 focus:ring-blue-500 bg-white/5 transition-colors"
+                                                />
+                                                <span className="text-sm text-slate-300 group-hover:text-white transition-colors">
+                                                    {course.courseName}
+                                                </span>
+                                            </label>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p className="text-sm text-slate-500">
+                                        {formData.departmentID ? 'No courses available for this department.' : 'Please select a department first.'}
+                                    </p>
+                                );
+                            })()}
                         </div>
                     </div>
 

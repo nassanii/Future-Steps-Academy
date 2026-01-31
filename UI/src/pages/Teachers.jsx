@@ -6,6 +6,8 @@ import { Plus, Search, Filter, Edit2, Trash2, BookOpen } from 'lucide-react';
 import TeacherModal from '../components/TeacherModal';
 import CourseListModal from '../components/CourseListModal';
 
+import { useToast } from '../context/ToastContext';
+
 const Teachers = () => {
     const [teachers, setTeachers] = useState([]);
     const [departments, setDepartments] = useState([]);
@@ -17,6 +19,7 @@ const Teachers = () => {
     const [isCourseModalOpen, setIsCourseModalOpen] = useState(false);
     const [currentTeacher, setCurrentTeacher] = useState(null);
     const [selectedTeacherCourses, setSelectedTeacherCourses] = useState({ name: '', courses: [], address: '' });
+    const toast = useToast();
 
     useEffect(() => {
         fetchData();
@@ -34,6 +37,7 @@ const Teachers = () => {
             setDepartments(departmentsData);
         } catch (error) {
             console.error("Failed to fetch data:", error);
+            toast.error("Failed to load teachers data");
         } finally {
             setLoading(false);
         }
@@ -42,11 +46,12 @@ const Teachers = () => {
     const handleCreate = async (data) => {
         try {
             await createTeacher(data);
+            toast.success("Teacher created successfully!");
             setIsModalOpen(false);
             fetchData(); // Refresh list
         } catch (error) {
             console.error("Failed to create teacher:", error);
-            alert("Failed to create teacher: " + (error.message || "Unknown error"));
+            toast.error("Failed to create teacher: " + (error.message || "Unknown error"));
         }
     };
 
@@ -55,25 +60,27 @@ const Teachers = () => {
         try {
             const updatedData = { ...data, teacherID: currentTeacher.teacherID };
             await updateTeacher(currentTeacher.teacherID, updatedData);
+            toast.success("Teacher updated successfully!");
             setIsModalOpen(false);
             setCurrentTeacher(null);
             fetchData();
         } catch (error) {
             console.error("Failed to update teacher:", error);
-            alert("Failed to update teacher: " + (error.message || "Unknown error"));
+            toast.error("Failed to update teacher: " + (error.message || "Unknown error"));
         }
     };
 
     const handleDelete = async (id) => {
-        if (window.confirm("Are you sure you want to delete this teacher?")) {
+        toast.confirm("Are you sure you want to delete this teacher?", async () => {
             try {
                 await deleteTeacher(id);
+                toast.success("Teacher deleted successfully!");
                 fetchData();
             } catch (error) {
                 console.error("Failed to delete teacher:", error);
-                alert("Failed to delete teacher");
+                toast.error("Failed to delete teacher");
             }
-        }
+        });
     };
 
     const openCreateModal = () => {
@@ -103,7 +110,8 @@ const Teachers = () => {
     const filteredTeachers = teachers.filter(teacher =>
         teacher.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
         teacher.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (teacher.email && teacher.email.toLowerCase().includes(searchTerm.toLowerCase()))
+        (teacher.email && teacher.email.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        teacher.teacherID.toString() === searchTerm
     );
 
     return (
@@ -128,7 +136,7 @@ const Teachers = () => {
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                     <input
                         type="text"
-                        placeholder="Search teachers..."
+                        placeholder="Search teachers by name, email, or ID..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-white/5 rounded-xl text-white focus:outline-none focus:border-blue-500 transition-all placeholder:text-slate-500"
@@ -216,6 +224,7 @@ const Teachers = () => {
                             <tr className="border-b border-white/5 bg-white/5">
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Teacher</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Contact</th>
+                                <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Courses</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Department</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Salary</th>
                                 <th className="p-6 text-sm font-semibold text-slate-400 uppercase tracking-wider">Hire Date</th>
@@ -225,11 +234,11 @@ const Teachers = () => {
                         <tbody className="divide-y divide-white/5">
                             {loading ? (
                                 <tr>
-                                    <td colSpan="6" className="p-8 text-center text-slate-400">Loading teachers...</td>
+                                    <td colSpan="7" className="p-8 text-center text-slate-400">Loading teachers...</td>
                                 </tr>
                             ) : filteredTeachers.length === 0 ? (
                                 <tr>
-                                    <td colSpan="6" className="p-8 text-center text-slate-400">No teachers found.</td>
+                                    <td colSpan="7" className="p-8 text-center text-slate-400">No teachers found.</td>
                                 </tr>
                             ) : (
                                 filteredTeachers.map((teacher) => (
@@ -252,6 +261,15 @@ const Teachers = () => {
                                             </div>
                                         </td>
                                         <td className="p-6">
+                                            <button
+                                                onClick={() => openCourseModal(teacher)}
+                                                className="px-4 py-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
+                                            >
+                                                <BookOpen className="w-4 h-4" />
+                                                View Courses
+                                            </button>
+                                        </td>
+                                        <td className="p-6">
                                             <span className="px-4 py-1.5 bg-purple-500/10 text-purple-400 rounded-full text-sm font-medium border border-purple-500/20">
                                                 {teacher.departmentName || 'General'}
                                             </span>
@@ -264,11 +282,6 @@ const Teachers = () => {
                                         </td>
                                         <td className="p-6 text-right">
                                             <div className="flex items-center justify-end gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                <button
-                                                    onClick={() => openCourseModal(teacher)}
-                                                    className="p-3 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-all transform hover:scale-110" title="View Courses">
-                                                    <BookOpen className="w-5 h-5" />
-                                                </button>
                                                 <button
                                                     onClick={() => openEditModal(teacher)}
                                                     className="p-3 hover:bg-white/10 rounded-xl text-slate-400 hover:text-white transition-all transform hover:scale-110" title="Edit">
